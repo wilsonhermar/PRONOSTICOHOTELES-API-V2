@@ -120,9 +120,3 @@ def update_hotel(hotel_in_db: HotelInDB):# actualizar
         return None
     else:
         return None
-
-def get_referencia(nombre: str): # Busqueda
-    if nombre in database_hotels.keys():
-        return database_hotels[nombre]
-    else:
-        return None

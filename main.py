@@ -1,5 +1,5 @@
 from db.hotel_db import HotelInDB
-from db.hotel_db import get_hotel, create_hotel, delete_hotel, update_hotel, get_referencia
+from db.hotel_db import get_hotel, create_hotel, delete_hotel, update_hotel
 from models.hotel_models import HotelIn, HotelOut, TempOut,CostOut
 
 
@@ -65,7 +65,7 @@ async def update_this_hotel(updateHotel: HotelOut):
 
 @app.get("/temp/search/{nombre},{mes}")
 async def get_temp(nombre: str, mes:int):
-    ref_in_db = get_referencia(nombre)
+    ref_in_db = get_hotel(nombre)
     if ref_in_db == None:
         raise HTTPException(status_code=404, detail="EL REGISTRO NO EXISTE EN LA BASE DE DATOS")
     ocup = TempOut(**ref_in_db.dict()) 
@@ -81,7 +81,7 @@ async def get_temp(nombre: str, mes:int):
 
 @app.get("/costo/search/{nombre},{mes},{tipo}")
 async def get_cost(nombre: str, mes:int, tipo:str):
-    ref_in_db = get_referencia(nombre)
+    ref_in_db = get_hotel(nombre)
     if ref_in_db == None:
         raise HTTPException(status_code=404, detail="EL REGISTRO NO EXISTE EN LA BASE DE DATOS")
     ocup = CostOut(**ref_in_db.dict()) 
