@@ -10,7 +10,11 @@ app = FastAPI()
 
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
-    "http://localhost", "http://localhost:8080", "http://localhost:8000", "http://localhost:8082",
+    "http://localhost", 
+    "http://localhost:8080", 
+    "http://localhost:8000", 
+    "http://localhost:8082",
+    "https://pronosticoshoteles-api-v2.herokuapp.com",
 ]
 
 app.add_middleware(
