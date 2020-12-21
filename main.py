@@ -14,7 +14,7 @@ origins = [
     "http://localhost:8080", 
     "http://localhost:8000", 
     "http://localhost:8082",
-    "https://pronosticoshoteles-api-v2.herokuapp.com",
+    "https://pronosticoshoteles-app-v2.herokuapp.com",
 ]
 
 app.add_middleware(
